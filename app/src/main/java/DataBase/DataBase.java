@@ -10,9 +10,22 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DataBase extends SQLiteOpenHelper{
 
+    public static final String DATABASE_NAME = "DBApp";
+    public static final int version = 1 ;
+
+
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE  .........");
+        System.out.println("creation db");
+
+        db.execSQL("CREATE TABLE RULE (id_rule INTEGER PRIMARY KEY AUTOINCREMENT,tag_name VARCHAR(50) UNIQUE, rule TEXT, rule_translation TEXT)");
+
+        db.execSQL("CREATE TABLE QUESTION (id_question INTEGER PRIMARY KEY AUTOINCREMENT, question TEXT, answer_A VARCHAR(30), answer_B VARCHAR(30)" +
+                ", answer_C VARCHAR(30), answer_D VARCHAR(30), correct_answer CHAR, id_rule INT,FOREIGN KEY (id_rule) REFERENCES RULE(id_rule))");
+
+        //db.execSQL("ALTER TABLE QUESTION ADD FOREIGN KEY (id_rule) REFERENCES RULE(id_rule)");
+
+        db.execSQL("INSERT INTO RULE VALUES (1,'haricot tante','la tante doit manger le haricot', 'the aunt must eat the bean')");
     }
 
     @Override
@@ -20,8 +33,8 @@ public class DataBase extends SQLiteOpenHelper{
 
     }
 
-    public DataBase (Context context, String name, SQLiteDatabase.CursorFactory factory, int version){
-        super(context, name, factory, version);
+    public DataBase (Context context){
+        super(context, DATABASE_NAME, null, version);
     }
 
 
