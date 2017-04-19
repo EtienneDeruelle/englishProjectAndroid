@@ -45,8 +45,12 @@ public class QuestionData {
         database.insert("QUESTION",null,values);
     }
 
-    public void delete(Question question){
+    public void deleteQuestion(Question question){
         int id = question.getIdQuestion();
+        database.delete("QUESTION", "id_question = "+id, null);
+    }
+
+    public void deleteQuestionById(int id){
         database.delete("QUESTION", "id_question = "+id, null);
     }
 
@@ -75,4 +79,30 @@ public class QuestionData {
         int indexAleatoire = rand.nextInt(questions.size());
         return questions.get(indexAleatoire);
     }
+
+    public void addAllQuestions() {
+
+        final Question q = new Question(1, "Diane ------ a meeting of the partners to discuss the merger situation.", "installed", "called", "asked", "claimed", "B", 1);
+        this.createQuestion(q);
+
+        final Question q2 = new Question(2, "He is going to have to fly to Los Angeles, ------ he likes it or not.", "when", "nor", "only", "whether", "D", 1);
+        this.createQuestion(q2);
+
+        final Question q3 = new Question(3, "At lunch, he ------ eat at his desk than go out with us.", "would rather", "would prefer", "better", "would", "A", 1);
+        this.createQuestion(q3);
+
+        final Question q4 = new Question(4, "The executives in ------ management decided to go ahead with the buyout.", "old", "senior", "chief", "superior", "B", 1);
+        this.createQuestion(q4);
+
+        final Question q5 = new Question(5, "As the project’s creative director, he delegated the smaller ------ to interns in the art department.", "work", "burden", "efforts", "tasks", "D", 1);
+        this.createQuestion(q5);
+
+        final Question q6 = new Question(6, "------ in doubt, get started early on the workload.", "If", "As", "When", "Where", "C", 1);
+        this.createQuestion(q6);
+
+    }
+
+
+
 }
+
