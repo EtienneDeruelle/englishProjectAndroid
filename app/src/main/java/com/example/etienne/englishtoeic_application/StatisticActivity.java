@@ -23,15 +23,22 @@ public class StatisticActivity extends AppCompatActivity {
         final TextView stat = (TextView) findViewById(R.id.stat);
         final TextView test = (TextView) findViewById(R.id.textView);
         final Button ButtonMenu = (Button) findViewById(R.id.buttonMenu);
+        final TextView stat2 = (TextView) findViewById(R.id.stat2);
 
         stat.setVisibility(View.INVISIBLE);
-        textStat.setText("Here you can see your statistics. \n Actually the only statistic is the percentage of good answer :");
-        test.setText("You have to awser some questions to have statistics !");
+        textStat.setText("Here you can see your statistics :");
+        test.setText("You have to answer some questions to have more statistic !");
+        if (QuestionActivity.getNbrQuestion() < 2) {
+            stat2.setText(Integer.toString(QuestionActivity.getNbrQuestion()) + " question answered");
+        }
+        else {
+            stat2.setText(Integer.toString(QuestionActivity.getNbrQuestion()) + " questions answered");
+        }
 
         final double goodStat = QuestionActivity.getGood() / (QuestionActivity.getGood() + QuestionActivity.getBad()) * 100;
         if (goodStat>-1) {
             stat.setVisibility(View.VISIBLE);
-            stat.setText(Double.toString(goodStat) + " %");
+            stat.setText(Double.toString(goodStat) + " % of good answer");
             test.setVisibility(View.INVISIBLE);
         }
 

@@ -16,6 +16,7 @@ public class QuestionActivity extends AppCompatActivity {
     String goodAnswer;
     private static double good = 0;
     private static double bad = 0;
+    private static int nbrQuestion = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +68,8 @@ public class QuestionActivity extends AppCompatActivity {
                 BoutonC.setEnabled(false);
                 BoutonD.setEnabled(false);
 
+                nbrQuestion = nbrQuestion + 1;
+
             }
 
 
@@ -90,6 +93,8 @@ public class QuestionActivity extends AppCompatActivity {
                 BoutonB.setEnabled(false);
                 BoutonC.setEnabled(false);
                 BoutonD.setEnabled(false);
+
+                nbrQuestion = nbrQuestion + 1;
 
             }
 
@@ -115,6 +120,8 @@ public class QuestionActivity extends AppCompatActivity {
                 BoutonC.setEnabled(false);
                 BoutonD.setEnabled(false);
 
+                nbrQuestion = nbrQuestion + 1;
+
             }
 
 
@@ -138,6 +145,8 @@ public class QuestionActivity extends AppCompatActivity {
                 BoutonB.setEnabled(false);
                 BoutonC.setEnabled(false);
                 BoutonD.setEnabled(false);
+
+                nbrQuestion = nbrQuestion + 1;
 
             }
 
@@ -191,6 +200,10 @@ public class QuestionActivity extends AppCompatActivity {
 
     public static double getBad() {
         return bad;
+    }
+
+    public static int getNbrQuestion() {
+        return nbrQuestion;
     }
 
 
