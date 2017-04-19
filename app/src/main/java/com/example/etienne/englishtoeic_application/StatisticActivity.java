@@ -1,11 +1,14 @@
 package com.example.etienne.englishtoeic_application;
 
 import android.content.Intent;
+
+import java.text.NumberFormat;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
 
 /**
  * Created by celesteallardi on 18/04/2017.
@@ -27,7 +30,7 @@ public class StatisticActivity extends AppCompatActivity {
 
         stat.setVisibility(View.INVISIBLE);
         textStat.setText("Here you can see your statistics :");
-        test.setText("You have to answer some questions to have more statistic !");
+        test.setText("You have to answer some questions to have more statistics !");
         if (QuestionActivity.getNbrQuestion() < 2) {
             stat2.setText(Integer.toString(QuestionActivity.getNbrQuestion()) + " question answered");
         }
@@ -38,7 +41,8 @@ public class StatisticActivity extends AppCompatActivity {
         final double goodStat = QuestionActivity.getGood() / (QuestionActivity.getGood() + QuestionActivity.getBad()) * 100;
         if (goodStat>-1) {
             stat.setVisibility(View.VISIBLE);
-            stat.setText(Double.toString(goodStat) + " % of good answer");
+            String strg = Double.toString(goodStat) + " % of good answer" ;
+            stat.setText(strg);
             test.setVisibility(View.INVISIBLE);
         }
 
