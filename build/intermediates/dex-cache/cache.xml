@@ -2,112 +2,94 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="/Users/celesteallardi/.android/build-cache/55eb98aeae4c0837586322619fde5edd73a6b0f6/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="1630658fbc2d222b988603c27b4a4249586fbfe7">
-        <dex dex="/Users/celesteallardi/StudioProjects/projetAngEtienne/englishProjectAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_2766c9b7b2f4a64734a333dea86c7b408efa637c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/celesteallardi/.android/build-cache/66a8adbd95225f11956f47c52c62f6ceb638c15c/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="f02263e35e52668dd17b73bf961437e3d562b35f">
-        <dex dex="/Users/celesteallardi/StudioProjects/projetAngEtienne/englishProjectAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_08f3e04b31e5bce5c45356edf018e07a866ac7e8/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/celesteallardi/.android/build-cache/35fe239324d44f10243264f2768279ca1a33f89f/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="e79aa3d9a16f8c9f16377c0608de70a8f31e5d80">
-        <dex dex="/Users/celesteallardi/StudioProjects/projetAngEtienne/englishProjectAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9a0cf2a80a3790ed9fb14b8d80da3083ad44dee3/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/celesteallardi/StudioProjects/projetAngEtienne/englishProjectAndroid/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="7219b27380448ae27503fce5ff1adb9cea40274a">
-        <dex dex="/Users/celesteallardi/StudioProjects/projetAngEtienne/englishProjectAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_4631eb68aa3059a81416cc98b1dcccfe2b4dc1bd/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/celesteallardi/.android/build-cache/df84510e12ce979d00bf659597636e42d44df553/output/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/home/etienne/.android/build-cache/e248997c7db9a8cdde1e32fc1bcc69ed775a3afa/output/jars/classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="6fb6ac3e8d3b9013819920d9ea11f3803c4c0033">
-        <dex dex="/Users/celesteallardi/StudioProjects/projetAngEtienne/englishProjectAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_0f0c9652cedf9477624992425638776f32af24ed/classes.dex" />
+        <dex dex="/home/etienne/AndroidStudioProjects/englishProjectAndroid/app/build/intermediates/pre-dexed/debug/classes_8f2d243afe09cc736f3ee86d10ba4eb0e1940c32.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/celesteallardi/.android/build-cache/801205c103bd60741ecbc57a14a5ae8e0a15c928/output/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/home/etienne/.android/build-cache/da6476cfff8843e36f011034d7fb531e3a372bcc/output/jars/classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="0a0ef86b7fa568a52bf6214a0326ca1f1d618da7">
-        <dex dex="/Users/celesteallardi/StudioProjects/projetAngEtienne/englishProjectAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_079f5e37738b47c1ea2c66354e63b8dc7b7a4317/classes.dex" />
+        sha1="1630658fbc2d222b988603c27b4a4249586fbfe7">
+        <dex dex="/home/etienne/AndroidStudioProjects/englishProjectAndroid/app/build/intermediates/pre-dexed/debug/classes_1f9b23bc9199a0c9dd2e63bb67a1cf698f7a96d2.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/celesteallardi/.android/build-cache/c3cb7e0a76118e8543f10bab822cbe0473298150/output/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/home/etienne/.android/build-cache/e27f06ec27b6bfe6d404d62062aff5601a37a2b1/output/jars/classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="aee64634871d88a419d59eb743c1258a60f19700">
-        <dex dex="/Users/celesteallardi/StudioProjects/projetAngEtienne/englishProjectAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_8ed1f515e721acb263df1ac4f1fae6202cb44af5/classes.dex" />
+        sha1="e79aa3d9a16f8c9f16377c0608de70a8f31e5d80">
+        <dex dex="/home/etienne/AndroidStudioProjects/englishProjectAndroid/app/build/intermediates/pre-dexed/debug/classes_4b6b710f28a944a20ea8e9db04459e2b237b63dd.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/celesteallardi/.android/build-cache/57cf5c7b7f435e07a6d03438b0eefc49f847fe7b/output/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/home/etienne/.android/build-cache/288d3f8c5908ce853d7f5529fe54bad189d5344b/output/jars/classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/Users/celesteallardi/StudioProjects/projetAngEtienne/englishProjectAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_6e1ba0e1c730e70bbd13ecad61419b17ebcfddde/classes.dex" />
+        <dex dex="/home/etienne/AndroidStudioProjects/englishProjectAndroid/app/build/intermediates/pre-dexed/debug/classes_c4eaa591641d6f1d0d23bdcd3a0b030990d9d654.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/celesteallardi/.android/build-cache/c2ec421b0191aba3741eae49e5a4a403653507a3/output/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/home/etienne/.android/build-cache/cc8cf91b90f6743c95e8a5c52d417f7acf908fd3/output/jars/classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="2a53c4f3518116b8c6aee0e477233f0f7da8616f">
-        <dex dex="/Users/celesteallardi/StudioProjects/projetAngEtienne/englishProjectAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_8a128cd4d552ee8f19f3983076203555d233278a/classes.dex" />
+        sha1="0a0ef86b7fa568a52bf6214a0326ca1f1d618da7">
+        <dex dex="/home/etienne/AndroidStudioProjects/englishProjectAndroid/app/build/intermediates/pre-dexed/debug/classes_4fc455a1971bfc81d40d41a393c1194e9e8a8cee.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/celesteallardi/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.1.0/support-annotations-25.1.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="64cb6b229a8bdfd907bc8dd46839a0053e4c018d">
-        <dex dex="/Users/celesteallardi/StudioProjects/projetAngEtienne/englishProjectAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.1.0_03df547e1657acb36ba31c1afb2d0e61cf24323c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/celesteallardi/.android/build-cache/d44dcbd5d171052685f51cfe9f90b6f1ed577bb3/output/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/home/etienne/.android/build-cache/c211f7ae94cb702d1b6d0506b9019e07951739f9/output/jars/classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="ca3c7aa31e2726a400a6e552b93cb9f63c9a1e6d">
-        <dex dex="/Users/celesteallardi/StudioProjects/projetAngEtienne/englishProjectAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5e68194454a7c597204bc87bdb29746c28339bdc/classes.dex" />
+        <dex dex="/home/etienne/AndroidStudioProjects/englishProjectAndroid/app/build/intermediates/pre-dexed/debug/classes_3058cea3cee07d2df07e2faf454a3c6f7581c9c1.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/celesteallardi/StudioProjects/projetAngEtienne/englishProjectAndroid/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/home/etienne/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/25.1.0/support-annotations-25.1.0.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
-        <dex dex="/Users/celesteallardi/StudioProjects/projetAngEtienne/englishProjectAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_cda31f3b6dcf3e46494eff135d75d5924ab9e242/classes.dex" />
+        sha1="64cb6b229a8bdfd907bc8dd46839a0053e4c018d">
+        <dex dex="/home/etienne/AndroidStudioProjects/englishProjectAndroid/app/build/intermediates/pre-dexed/debug/support-annotations-25.1.0_8a70ffe23835531ccfb02762d060704c8d965ce1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/etienne/.android/build-cache/bc0b5e3bd7d3cf0555360161a5a001f95fde060d/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f02263e35e52668dd17b73bf961437e3d562b35f">
+        <dex dex="/home/etienne/AndroidStudioProjects/englishProjectAndroid/app/build/intermediates/pre-dexed/debug/classes_32184a89463cc135ae4829c1ec5ef5c3a1160cca.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/etienne/.android/build-cache/390ce9202b43cc340d36e2c13bca9c7d3450e4f2/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="aee64634871d88a419d59eb743c1258a60f19700">
+        <dex dex="/home/etienne/AndroidStudioProjects/englishProjectAndroid/app/build/intermediates/pre-dexed/debug/classes_6eeb6589a0d210ad3c2250ee82e75b957d827167.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/etienne/.android/build-cache/27024f31956b5501ac8b8d2a3374e33a5c6de74e/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2a53c4f3518116b8c6aee0e477233f0f7da8616f">
+        <dex dex="/home/etienne/AndroidStudioProjects/englishProjectAndroid/app/build/intermediates/pre-dexed/debug/classes_62911b49a813f38dca1cbaf5162fcf1aed710185.jar" />
     </item>
 
 </items>
