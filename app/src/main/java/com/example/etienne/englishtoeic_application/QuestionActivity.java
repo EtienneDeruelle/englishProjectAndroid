@@ -6,15 +6,27 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import DataBase.QuestionData;
 
 import buisiness.Question;
 
 public class QuestionActivity extends AppCompatActivity {
 
+    QuestionData qd = new QuestionData(this);
+    String goodAnswer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
+
+        qd.open();
+        //qd.deleteQuestionById(1);
+        //final Question q2 = new Question(2, "He is going to have to fly to Los Angeles, ------ he likes it or not.", "when", "nor", "only", "whether", "D", 1);
+        //qd.createQuestion(q2);
+        //final Question q = new Question(1, "Diane ------ a meeting of the partners to discuss the merger situation.", "installed", "called", "asked", "claimed", "B", 1);
+        //qd.createQuestion(q);
 
         final TextView result = (TextView) findViewById(R.id.textView9);
         final TextView next = (TextView) findViewById(R.id.buttonNext);
@@ -25,6 +37,11 @@ public class QuestionActivity extends AppCompatActivity {
         final Button BoutonD = (Button) findViewById(R.id.buttonD);
         final Button BoutonNext = (Button) findViewById(R.id.buttonNext);
 
+        BoutonNext.setVisibility(View.INVISIBLE);
+        result.setVisibility(View.INVISIBLE);
+
+    //BOUTON QUIT
+
         QuitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,21 +50,106 @@ public class QuestionActivity extends AppCompatActivity {
             }
         });
 
-        BoutonA.setOnClickListener(new View.OnClickListener() {
-            // if (recupBonneReponse == "A")
+     //BOUTON D
+        BoutonD.setOnClickListener(new View.OnClickListener() {
 
-                @Override
-                public void onClick (View v){
-                result.setText("Good answer");
-                    next.setText("Next question");
 
-                }
+            @Override
+            public void onClick(View v) {
 
-            //else { result.setText("Sorry, let's move on to the next question"); }
+                if (goodAnswer.contentEquals("D")) {result.setText("Good answer !");}
+                else { result.setText("Sorry, the right answer was " + goodAnswer);}
+
+                next.setText("Next question");
+                BoutonNext.setVisibility(View.VISIBLE);
+                result.setVisibility(View.VISIBLE);
+
+                BoutonA.setEnabled(false);
+                BoutonB.setEnabled(false);
+                BoutonC.setEnabled(false);
+                BoutonD.setEnabled(false);
+
+            }
+
 
         });
 
+    //BOUTON C
+        BoutonC.setOnClickListener(new View.OnClickListener() {
+
+
+            @Override
+            public void onClick(View v) {
+
+                if (goodAnswer.contentEquals("C")) {result.setText("Good answer !");}
+                else { result.setText("Sorry, the right answer was " + goodAnswer);}
+
+                next.setText("Next question");
+                BoutonNext.setVisibility(View.VISIBLE);
+                result.setVisibility(View.VISIBLE);
+
+                BoutonA.setEnabled(false);
+                BoutonB.setEnabled(false);
+                BoutonC.setEnabled(false);
+                BoutonD.setEnabled(false);
+
+            }
+
+
+        });
+
+     //BOUTON B
+        BoutonB.setOnClickListener(new View.OnClickListener() {
+
+
+            @Override
+            public void onClick(View v) {
+
+                if (goodAnswer.contentEquals("B")) {result.setText("Good answer !");}
+                else { result.setText("Sorry, the right answer was " + goodAnswer);}
+
+                next.setText("Next question");
+                BoutonNext.setVisibility(View.VISIBLE);
+                result.setVisibility(View.VISIBLE);
+
+                BoutonA.setEnabled(false);
+                BoutonB.setEnabled(false);
+                BoutonC.setEnabled(false);
+                BoutonD.setEnabled(false);
+
+            }
+
+
+        });
+
+    //BOUTON A
+        BoutonA.setOnClickListener(new View.OnClickListener() {
+
+
+            @Override
+            public void onClick(View v) {
+
+                if (goodAnswer.contentEquals("A")) {result.setText("Good answer !");}
+                else { result.setText("Sorry, the right answer was " + goodAnswer);}
+
+                next.setText("Next question");
+                BoutonNext.setVisibility(View.VISIBLE);
+                result.setVisibility(View.VISIBLE);
+
+                BoutonA.setEnabled(false);
+                BoutonB.setEnabled(false);
+                BoutonC.setEnabled(false);
+                BoutonD.setEnabled(false);
+
+            }
+
+
+        });
+
+
+    //BOUTON NEXT
         BoutonNext.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 Intent intentToeic = new Intent(QuestionActivity.this, QuestionActivity.class);
@@ -56,16 +158,8 @@ public class QuestionActivity extends AppCompatActivity {
         });
 
 
-
     }
 
-    //je prend en compte qu'une question est liée à 4 réponses possibles et une bonne réponse
-
-    String quest = "Diane ------ a meeting of the partners to discuss the merger situation.";
-    String respA = "called";
-    String respB = "claimed";
-    String respC = "asked";
-    String respD = "installed";
     @Override
     protected void onStart() {
         super.onStart();
@@ -75,16 +169,22 @@ public class QuestionActivity extends AppCompatActivity {
         TextView reponseC = (TextView) findViewById(R.id.textView7);
         TextView reponseD = (TextView) findViewById(R.id.textView8);
 
+        Question quest = qd.getRandomQuestion();
+        qd.close();
+
         // récupération d'une question
-        //récupération de la réponse
-        String bonneReponse = "C";
+        question.setText(quest.getQuestion());
+
+        // récupération des réponses
+        reponseA.setText(quest.getAnswerA());
+        reponseB.setText(quest.getAnswerB());
+        reponseC.setText(quest.getAnswerC());
+        reponseD.setText(quest.getAnswerD());
+
+        //récupération bonne réponse
+        goodAnswer = quest.getCorrectAnswer();
 
 
-        question.setText(quest);
-        reponseA.setText(respA);
-        reponseB.setText(respB);
-        reponseC.setText(respC);
-        reponseD.setText(respD);
     }
 
 

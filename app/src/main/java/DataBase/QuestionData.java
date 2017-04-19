@@ -45,8 +45,12 @@ public class QuestionData {
         database.insert("QUESTION",null,values);
     }
 
-    public void delete(Question question){
+    public void deleteQuestion(Question question){
         int id = question.getIdQuestion();
+        database.delete("QUESTION", "id_question = "+id, null);
+    }
+
+    public void deleteQuestionById(int id){
         database.delete("QUESTION", "id_question = "+id, null);
     }
 
