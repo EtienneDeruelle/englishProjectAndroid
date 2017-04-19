@@ -27,10 +27,6 @@ public class DataBase extends SQLiteOpenHelper{
         db.execSQL("INSERT INTO RULE VALUES (2,'kung fu','The kung fu is a martial sport. It can be dangerous to pratice this sport.', 'Le kung fu est un sport de combat. Il peut etre dangeureux de pratiquer ce sport.')");
 
 
-        //db.execSQL("INSERT INTO QUESTION VALUES (2, 'He is going to have to fly to Los Angeles, ------ he likes it or not.', 'when', 'nor', 'only', 'whether', 'D', 1)");
-
-
-
     }
 
     @Override

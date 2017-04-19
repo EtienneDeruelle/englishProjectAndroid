@@ -22,11 +22,8 @@ public class QuestionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_question);
 
         qd.open();
-        //qd.deleteQuestionById(1);
-        //final Question q2 = new Question(2, "He is going to have to fly to Los Angeles, ------ he likes it or not.", "when", "nor", "only", "whether", "D", 1);
-        //qd.createQuestion(q2);
-        //final Question q = new Question(1, "Diane ------ a meeting of the partners to discuss the merger situation.", "installed", "called", "asked", "claimed", "B", 1);
-        //qd.createQuestion(q);
+        qd.addAllQuestions();
+
 
         final TextView result = (TextView) findViewById(R.id.textView9);
         final TextView next = (TextView) findViewById(R.id.buttonNext);
