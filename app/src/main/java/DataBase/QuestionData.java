@@ -94,8 +94,15 @@ public class QuestionData {
         final Question q4 = new Question(4, "The executives in ------ management decided to go ahead with the buyout.", "old", "senior", "chief", "superior", "B", 1);
         this.createQuestion(q4);
 
+        final Question q5 = new Question(5, "As the project’s creative director, he delegated the smaller ------ to interns in the art department.", "work", "burden", "efforts", "tasks", "D", 1);
+        this.createQuestion(q5);
+
+        final Question q6 = new Question(6, "------ in doubt, get started early on the workload.", "If", "As", "When", "Where", "C", 1);
+        this.createQuestion(q6);
+
     }
 
 
 
 }
+

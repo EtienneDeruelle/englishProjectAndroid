@@ -14,6 +14,8 @@ public class QuestionActivity extends AppCompatActivity {
 
     QuestionData qd = new QuestionData(this);
     String goodAnswer;
+    private static double good = 0;
+    private static double bad = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +40,6 @@ public class QuestionActivity extends AppCompatActivity {
         result.setVisibility(View.INVISIBLE);
 
     //BOUTON QUIT
-
         QuitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,8 +55,8 @@ public class QuestionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (goodAnswer.contentEquals("D")) {result.setText("Good answer !");}
-                else { result.setText("Sorry, the right answer was " + goodAnswer);}
+                if (goodAnswer.contentEquals("D")) {result.setText("Good answer !"); good = good + 1;}
+                else { result.setText("Sorry, the right answer was " + goodAnswer); bad = bad +1;}
 
                 next.setText("Next question");
                 BoutonNext.setVisibility(View.VISIBLE);
@@ -78,8 +79,8 @@ public class QuestionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (goodAnswer.contentEquals("C")) {result.setText("Good answer !");}
-                else { result.setText("Sorry, the right answer was " + goodAnswer);}
+                if (goodAnswer.contentEquals("C")) {result.setText("Good answer !"); good = good + 1;}
+                else { result.setText("Sorry, the right answer was " + goodAnswer); bad = bad +1;}
 
                 next.setText("Next question");
                 BoutonNext.setVisibility(View.VISIBLE);
@@ -102,8 +103,8 @@ public class QuestionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (goodAnswer.contentEquals("B")) {result.setText("Good answer !");}
-                else { result.setText("Sorry, the right answer was " + goodAnswer);}
+                if (goodAnswer.contentEquals("B")) {result.setText("Good answer !"); good = good + 1;}
+                else { result.setText("Sorry, the right answer was " + goodAnswer); bad = bad +1;}
 
                 next.setText("Next question");
                 BoutonNext.setVisibility(View.VISIBLE);
@@ -126,8 +127,8 @@ public class QuestionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (goodAnswer.contentEquals("A")) {result.setText("Good answer !");}
-                else { result.setText("Sorry, the right answer was " + goodAnswer);}
+                if (goodAnswer.contentEquals("A")) {result.setText("Good answer !"); good = good + 1;}
+                else { result.setText("Sorry, the right answer was " + goodAnswer); bad = bad +1;}
 
                 next.setText("Next question");
                 BoutonNext.setVisibility(View.VISIBLE);
@@ -182,6 +183,14 @@ public class QuestionActivity extends AppCompatActivity {
         goodAnswer = quest.getCorrectAnswer();
 
 
+    }
+
+    public static double getGood() {
+        return good;
+    }
+
+    public static double getBad() {
+        return bad;
     }
 
 

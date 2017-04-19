@@ -26,13 +26,13 @@
         <Button
             android:id="@+id/buttonA"
             android:layout_width="54dp"
-            android:layout_height="45dp"
+            android:layout_height="35dp"
             android:text="a" />
 
         <TextView
             android:id="@+id/textView5"
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="35dp"
             android:gravity="fill"
             android:paddingLeft="54dp"
             android:text="rep 1" />
@@ -45,13 +45,13 @@
         <Button
             android:id="@+id/buttonB"
             android:layout_width="54dp"
-            android:layout_height="45dp"
+            android:layout_height="35dp"
             android:text="b" />
 
         <TextView
             android:id="@+id/textView6"
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="35dp"
             android:gravity="fill"
             android:paddingLeft="54dp"
             android:text="rep 2" />
@@ -64,13 +64,13 @@
         <Button
             android:id="@+id/buttonC"
             android:layout_width="54dp"
-            android:layout_height="45dp"
+            android:layout_height="35dp"
             android:text="c" />
 
         <TextView
             android:id="@+id/textView7"
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="35dp"
             android:gravity="fill"
             android:paddingLeft="54dp"
             android:text="rep 3" />
@@ -83,13 +83,13 @@
         <Button
             android:id="@+id/buttonD"
             android:layout_width="54dp"
-            android:layout_height="45dp"
+            android:layout_height="35dp"
             android:text="d" />
 
         <TextView
             android:id="@+id/textView8"
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="35dp"
             android:gravity="fill"
             android:paddingLeft="54dp"
             android:text="rep 4" />
@@ -105,7 +105,7 @@
         <TextView
             android:id="@+id/textView9"
             android:layout_width="match_parent"
-            android:layout_height="54dp"
+            android:layout_height="35dp"
             android:gravity="center"
             android:text="TextView" />
 
@@ -121,7 +121,7 @@
         <Button
             android:id="@+id/buttonNext"
             android:layout_width="match_parent"
-            android:layout_height="54dp"
+            android:layout_height="35dp"
             android:clickable="false"
             android:text="..." />
 
@@ -137,8 +137,8 @@
         <Button
             android:id="@+id/buttonQuit"
             android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:text="quit" />
+            android:layout_height="35dp"
+            android:text="Back to the menu" />
 
     </LinearLayout>
 

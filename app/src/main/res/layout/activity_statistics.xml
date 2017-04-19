@@ -7,10 +7,46 @@
     tools:context="com.example.etienne.englishtoeic_application.StatisticActivity">
 
     <TextView
+        android:id="@+id/statIntro"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:text="stat"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="26dp" />
+
+    <TextView
+        android:id="@+id/stat"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/statIntro"
+        android:text="stat"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/stat"
+        android:text="TextView"
+        android:textAlignment="center" />
+
+    <Button
+        android:id="@+id/buttonMenu"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="staTIStic" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView"
+        android:text="Back to the menu"
+        android:textAlignment="center" />
 </RelativeLayout>
