@@ -6,15 +6,17 @@ package buisiness;
 
 public class Question {
 
+    private int idQuestion;
     private String question;
     private String answerA;
     private String answerB;
     private String answerC;
     private String answerD;
-    private char correctAnswer;
+    private String correctAnswer;
     private int rule;
 
-    public Question(String question, String answerA, String answerC, String answerB, String answerD, char correctAnswer, int rule) {
+    public Question(int idQuestion, String question, String answerA, String answerC, String answerB, String answerD, String correctAnswer, int rule) {
+        this.idQuestion = idQuestion;
         this.question = question;
         this.answerA = answerA;
         this.answerC = answerC;
@@ -22,6 +24,14 @@ public class Question {
         this.answerD = answerD;
         this.correctAnswer = correctAnswer;
         this.rule = rule;
+    }
+
+    public int getIdQuestion() {
+        return idQuestion;
+    }
+
+    public void setIdQuestion(int idQuestion) {
+        this.idQuestion = idQuestion;
     }
 
     public String getQuestion() {
@@ -72,11 +82,11 @@ public class Question {
         this.answerC = answerC;
     }
 
-    public char getCorrectAnswer(){
+    public String getCorrectAnswer(){
         return correctAnswer;
     }
 
-    public void setCorrectAnswer(char correctAnswer){
+    public void setCorrectAnswer(String correctAnswer){
         this.correctAnswer=correctAnswer;
     }
 }

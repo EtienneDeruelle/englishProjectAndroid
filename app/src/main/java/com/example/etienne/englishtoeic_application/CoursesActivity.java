@@ -26,19 +26,19 @@ public class CoursesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_courses);
 
-        /*
+
         mListView = (ListView) findViewById(R.id.listView);
         List<Rule> rules = genererRules();
         CourseAdapter adapter = new CourseAdapter(CoursesActivity.this, rules);
         mListView.setAdapter(adapter);
-        */
     }
 
     private List<Rule> genererRules(){
         List<Rule> rules = new ArrayList<Rule>();
         RuleData ruledb = new RuleData(this);
-        Rule rule = ruledb.getRuleById(1);
-        rules.add(rule);
+        ruledb.open();
+        rules = ruledb.getAllRule();
+        ruledb.close();
         return rules;
     }
 
