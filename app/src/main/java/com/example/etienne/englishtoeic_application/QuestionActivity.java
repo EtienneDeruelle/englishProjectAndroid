@@ -51,7 +51,6 @@ public class QuestionActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intentToeic = new Intent(QuestionActivity.this, MenuActivity.class);
                 startActivity(intentToeic);
-                //sd.close();
             }
         });
 
@@ -63,15 +62,13 @@ public class QuestionActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 if (goodAnswer.contentEquals("D")) {
-                    //result.setText("Good answer !");
-                    //sd.goodAnswerQuestion();
-                    sd.upDateStat("question_number_answer", 2);
-                    result.setText(Integer.toString(sd.getNumberAnswerQuestion()));
+                    result.setText("Good answer !");
+                    sd.goodAnswerQuestion();
                     sd.close();
                 }
                 else {
                     result.setText("Sorry, the right answer was " + goodAnswer);
-                    //sd.wrongAnswerQuestion();
+                    sd.wrongAnswerQuestion();
                     sd.close();
                 }
 
@@ -189,7 +186,6 @@ public class QuestionActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intentToeic = new Intent(QuestionActivity.this, QuestionActivity.class);
                 startActivity(intentToeic);
-                //sd.close();
             }
         });
 

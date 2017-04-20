@@ -50,6 +50,7 @@ public class StatData {
         if(!cursor.isAfterLast()){
             numberOfStat = cursor.getInt(1);
         }
+
         return numberOfStat;
     }
 
