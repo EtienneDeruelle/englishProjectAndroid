@@ -23,6 +23,13 @@ public class DataBase extends SQLiteOpenHelper{
         db.execSQL("CREATE TABLE QUESTION (id_question INTEGER PRIMARY KEY AUTOINCREMENT, question TEXT, answer_A VARCHAR(30), answer_B VARCHAR(30)" +
                 ", answer_C VARCHAR(30), answer_D VARCHAR(30), correct_answer VARCHAR(1), id_rule INT,FOREIGN KEY (id_rule) REFERENCES RULE(id_rule))");
 
+        db.execSQL("CREATE TABLE STAT (label_stat VARCHAR(30) UNIQUE, number_stat INTEGER DEFAULT 0)");
+
+        db.execSQL("INSERT INTO STAT(label_stat) VALUES ('question_number_answer')");
+        db.execSQL("INSERT INTO STAT(label_stat) VALUES ('question_number_good_answer')");
+        db.execSQL("INSERT INTO STAT(label_stat) VALUES ('vocabulary_number_answer')");
+        db.execSQL("INSERT INTO STAT(label_stat) VALUES ('vocabulary_number_good_answer')");
+
         db.execSQL("INSERT INTO RULE VALUES (1,'haricot 2tante','la tante doit manger le haricot', 'the aunt must eat the bean')");
         db.execSQL("INSERT INTO RULE VALUES (2,'kung fu','The kung fu is a martial sport. It can be dangerous to pratice this sport.', 'Le kung fu est un sport de combat. Il peut etre dangeureux de pratiquer ce sport.')");
 
