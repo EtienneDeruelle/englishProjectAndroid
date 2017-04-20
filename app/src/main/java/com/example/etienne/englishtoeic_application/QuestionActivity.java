@@ -8,15 +8,16 @@ import android.widget.Button;
 import android.widget.TextView;
 import DataBase.QuestionData;
 
+import DataBase.StatData;
 import buisiness.Question;
 
 public class QuestionActivity extends AppCompatActivity {
 
     QuestionData qd = new QuestionData(this);
+    StatData sd = new StatData(this);
+
     String goodAnswer;
-    private static double good = 0;
-    private static double bad = 0;
-    private static int nbrQuestion = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,10 @@ public class QuestionActivity extends AppCompatActivity {
 
         qd.open();
         qd.addAllQuestions();
+
+        sd.open();
+        sd.createStat("question_number_answer");
+        sd.createStat("question_number_good_answer");
 
 
         final TextView result = (TextView) findViewById(R.id.textView9);
@@ -46,6 +51,7 @@ public class QuestionActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intentToeic = new Intent(QuestionActivity.this, MenuActivity.class);
                 startActivity(intentToeic);
+                //sd.close();
             }
         });
 
@@ -56,8 +62,18 @@ public class QuestionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (goodAnswer.contentEquals("D")) {result.setText("Good answer !"); good = good + 1;}
-                else { result.setText("Sorry, the right answer was " + goodAnswer); bad = bad +1;}
+                if (goodAnswer.contentEquals("D")) {
+                    //result.setText("Good answer !");
+                    //sd.goodAnswerQuestion();
+                    sd.upDateStat("question_number_answer", 2);
+                    result.setText(Integer.toString(sd.getNumberAnswerQuestion()));
+                    sd.close();
+                }
+                else {
+                    result.setText("Sorry, the right answer was " + goodAnswer);
+                    //sd.wrongAnswerQuestion();
+                    sd.close();
+                }
 
                 next.setText("Next question");
                 BoutonNext.setVisibility(View.VISIBLE);
@@ -67,9 +83,6 @@ public class QuestionActivity extends AppCompatActivity {
                 BoutonB.setEnabled(false);
                 BoutonC.setEnabled(false);
                 BoutonD.setEnabled(false);
-
-                nbrQuestion = nbrQuestion + 1;
-
             }
 
 
@@ -82,8 +95,16 @@ public class QuestionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (goodAnswer.contentEquals("C")) {result.setText("Good answer !"); good = good + 1;}
-                else { result.setText("Sorry, the right answer was " + goodAnswer); bad = bad +1;}
+                if (goodAnswer.contentEquals("C")) {
+                    result.setText("Good answer !");
+                    sd.goodAnswerQuestion();
+                    sd.close();
+                }
+                else {
+                    result.setText("Sorry, the right answer was " + goodAnswer);
+                    sd.wrongAnswerQuestion();
+                    sd.close();
+                }
 
                 next.setText("Next question");
                 BoutonNext.setVisibility(View.VISIBLE);
@@ -93,9 +114,6 @@ public class QuestionActivity extends AppCompatActivity {
                 BoutonB.setEnabled(false);
                 BoutonC.setEnabled(false);
                 BoutonD.setEnabled(false);
-
-                nbrQuestion = nbrQuestion + 1;
-
             }
 
 
@@ -108,8 +126,16 @@ public class QuestionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (goodAnswer.contentEquals("B")) {result.setText("Good answer !"); good = good + 1;}
-                else { result.setText("Sorry, the right answer was " + goodAnswer); bad = bad +1;}
+                if (goodAnswer.contentEquals("B")) {
+                    result.setText("Good answer !");
+                    sd.goodAnswerQuestion();
+                    sd.close();
+                }
+                else {
+                    result.setText("Sorry, the right answer was " + goodAnswer);
+                    sd.wrongAnswerQuestion();
+                    sd.close();
+                }
 
                 next.setText("Next question");
                 BoutonNext.setVisibility(View.VISIBLE);
@@ -119,9 +145,6 @@ public class QuestionActivity extends AppCompatActivity {
                 BoutonB.setEnabled(false);
                 BoutonC.setEnabled(false);
                 BoutonD.setEnabled(false);
-
-                nbrQuestion = nbrQuestion + 1;
-
             }
 
 
@@ -134,8 +157,16 @@ public class QuestionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (goodAnswer.contentEquals("A")) {result.setText("Good answer !"); good = good + 1;}
-                else { result.setText("Sorry, the right answer was " + goodAnswer); bad = bad +1;}
+                if (goodAnswer.contentEquals("A")) {
+                    result.setText("Good answer !");
+                    sd.goodAnswerQuestion();
+                    sd.close();
+                }
+                else {
+                    result.setText("Sorry, the right answer was " + goodAnswer);
+                    sd.wrongAnswerQuestion();
+                    sd.close();
+                }
 
                 next.setText("Next question");
                 BoutonNext.setVisibility(View.VISIBLE);
@@ -145,9 +176,6 @@ public class QuestionActivity extends AppCompatActivity {
                 BoutonB.setEnabled(false);
                 BoutonC.setEnabled(false);
                 BoutonD.setEnabled(false);
-
-                nbrQuestion = nbrQuestion + 1;
-
             }
 
 
@@ -161,6 +189,7 @@ public class QuestionActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intentToeic = new Intent(QuestionActivity.this, QuestionActivity.class);
                 startActivity(intentToeic);
+                //sd.close();
             }
         });
 
@@ -193,19 +222,5 @@ public class QuestionActivity extends AppCompatActivity {
 
 
     }
-
-    public static double getGood() {
-        return good;
-    }
-
-    public static double getBad() {
-        return bad;
-    }
-
-    public static int getNbrQuestion() {
-        return nbrQuestion;
-    }
-
-
 
 }

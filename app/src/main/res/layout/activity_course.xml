@@ -5,28 +5,58 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_column="0"
         android:layout_row="0"
-        android:layout_column="0"
         android:text="tagName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView1" />
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_column="0"
         android:layout_row="1"
-        android:layout_column="0"
         android:gravity="center"
+        android:textAlignment="center"
         android:text="rule"
-        android:layout_width="match_parent"
-        android:id="@+id/textView2" />
+        android:textSize="18sp" />
 
     <TextView
-        android:layout_row="2"
-        android:layout_column="0"
-        android:gravity="center"
-        android:text="translation"
+        android:id="@+id/textView3"
         android:layout_width="match_parent"
-        android:id="@+id/textView3"/>
+        android:layout_height="70dp"
+        android:layout_column="0"
+        android:layout_row="2"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text="translation"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/buttonBack"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_column="0"
+        android:layout_row="3"
+        android:gravity="center"
+        android:text="Back to the lessons"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/butMenu"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_column="0"
+        android:layout_row="4"
+        android:gravity="center"
+        android:text="Back to the menu"
+        android:textSize="14sp" />
 
 
 </GridLayout>
