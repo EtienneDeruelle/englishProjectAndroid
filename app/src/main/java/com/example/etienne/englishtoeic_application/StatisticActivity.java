@@ -31,47 +31,87 @@ public class StatisticActivity extends AppCompatActivity {
         final TextView test = (TextView) findViewById(R.id.textView);
         final Button ButtonMenu = (Button) findViewById(R.id.buttonMenu);
         final TextView stat2 = (TextView) findViewById(R.id.stat2);
+        final Button reset = (Button) findViewById(R.id.buttonReset);
+        final TextView statVoc = (TextView) findViewById(R.id.statVoc);
+        final TextView stat2voc = (TextView) findViewById(R.id.stat2Voc);
 
         stat.setVisibility(View.INVISIBLE);
-        textStat.setText("Here you can see your statistics :");
-        test.setText("You have to answer some questions to have more statistics !");
+        textStat.setText("Here you can see your statistics : \n \n Statistics for the TOEIC : ");
 
-        final int nbrQ = sd.getNumberAnswerQuestion();
+     //NOMBRE DE QUESTIONS REPONDUES
+        final double nbrQ = sd.getNumberAnswerQuestion();
+        final double goodRep = sd.getNumberGoodAnswerQuestion();
+        final double nbrV = sd.getNumberAnswerVocabulary();
+        final double goodVoc = sd.getNumberAnswerGoodVocabulary();
+        sd.close();
 
-        if (nbrQ< 2) {
-            stat2.setText(Integer.toString(nbrQ) + " question answered");
-        }
-        else {
-            stat2.setText(Integer.toString(nbrQ) + " questions answered");
-        }
-
-
-        final int goodRep = sd.getNumberGoodAnswerQuestion();
         double nbr;
         if(nbrQ == 0){
             nbr=0;
-        }else{
-            nbr = goodRep / nbrQ * 100;
+            test.setText("You have to answer some questions to have more statistics !");
         }
-        final double goodStat = nbr;
-
-        if (goodStat>-1) {
+        else{
+            nbr = goodRep / nbrQ * 100;
             stat.setVisibility(View.VISIBLE);
-            String strg = Double.toString(goodStat) + " % of good answer" ;
+            String strg = Double.toString(Math.round(goodRep/nbrQ*100)) + " % of good answer" ;
             stat.setText(strg);
             test.setVisibility(View.INVISIBLE);
+        }
+
+
+        /*
+        double nbrV;
+        if(nbrV == 0){
+            nbr=0;
+            test.setText("You have to answer some questions to have more statistics !");
+        }
+        else{
+            nbr = goodVoc / nbrV * 100;
+            stat.setVisibility(View.VISIBLE);
+            String strg = Double.toString(Math.round(goodVoc/nbrV*100)) + " % of good answer" ;
+            stat.setText(strg);
+            test.setVisibility(View.INVISIBLE);
+        }
+         */
+
+
+        //AFFICHAGE SANS FAUTE D'ORTHOGRAPHE
+        if (nbrQ< 2) {
+            stat2.setText(Double.toString(nbrQ) + " question answered");
+        }
+        else {
+            stat2.setText(Double.toString(nbrQ) + " questions answered");
+        }
+
+        if (nbrV< 2) {
+            stat2voc.setText(Double.toString(nbrV) + " question answered");
+        }
+        else {
+            stat2voc.setText(Double.toString(nbrV) + " questions answered");
         }
 
         //BOUTON QUIT
         ButtonMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentToeic = new Intent(StatisticActivity.this, MenuActivity.class);
-                startActivity(intentToeic);
+                Intent intentM = new Intent(StatisticActivity.this, MenuActivity.class);
+                startActivity(intentM);
             }
         });
 
 
+        //BOUTON REMISE A ZERO
+        reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sd.open();
+                sd.upDateStat("question_number_answer", 0);
+                sd.upDateStat("question_number_good_answer", 0);
+                sd.close();
+                Intent intentR = new Intent(StatisticActivity.this, StatisticActivity.class);
+                startActivity(intentR);
+            }
+        });
 
 
     }
