@@ -47,7 +47,13 @@ public class StatisticActivity extends AppCompatActivity {
 
 
         final int goodRep = sd.getNumberGoodAnswerQuestion();
-        final double goodStat = goodRep / nbrQ * 100;
+        double nbr;
+        if(nbrQ == 0){
+            nbr=0;
+        }else{
+            nbr = goodRep / nbrQ * 100;
+        }
+        final double goodStat = nbr;
 
         if (goodStat>-1) {
             stat.setVisibility(View.VISIBLE);
