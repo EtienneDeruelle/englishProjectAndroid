@@ -25,11 +25,9 @@ public class CoursesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_courses);
-
-
         mListView = (ListView) findViewById(R.id.listView);
         List<Rule> rules = genererRules();
-        CourseAdapter adapter = new CourseAdapter(CoursesActivity.this, rules);
+        CourseAdapter adapter = new CourseAdapter(CoursesActivity.this,0, rules);
         mListView.setAdapter(adapter);
     }
 

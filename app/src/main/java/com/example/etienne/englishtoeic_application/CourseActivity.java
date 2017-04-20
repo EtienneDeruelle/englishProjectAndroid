@@ -1,5 +1,6 @@
 package com.example.etienne.englishtoeic_application;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
@@ -27,10 +28,12 @@ public class CourseActivity extends AppCompatActivity {
         TextView ruleTranslationT = (TextView) findViewById(R.id.textView3);
 
         // récupération de la règle
-
+        Intent intent = getIntent();
+        int lessonNumber = intent.getIntExtra("numberLesson",1);
         RuleData ruledb = new RuleData(this);
         ruledb.open();
-        Rule rule = ruledb.getRuleById(1);
+        Rule rule = ruledb.getRuleById(lessonNumber);
+        ruledb.close();
 
         tagNameT.setText(rule.getTagName());
         ruleT.setText(rule.getRule());
