@@ -2,12 +2,13 @@ package com.example.etienne.englishtoeic_application;
 
 import android.content.Intent;
 
-import java.text.NumberFormat;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import DataBase.StatData;
 
 
 /**
@@ -16,11 +17,14 @@ import android.widget.TextView;
 
 public class StatisticActivity extends AppCompatActivity {
 
+    StatData sd = new StatData(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_statistics);
+
+        sd.open();
 
         final TextView textStat = (TextView) findViewById(R.id.statIntro);
         final TextView stat = (TextView) findViewById(R.id.stat);
@@ -31,14 +35,20 @@ public class StatisticActivity extends AppCompatActivity {
         stat.setVisibility(View.INVISIBLE);
         textStat.setText("Here you can see your statistics :");
         test.setText("You have to answer some questions to have more statistics !");
-        if (QuestionActivity.getNbrQuestion() < 2) {
-            stat2.setText(Integer.toString(QuestionActivity.getNbrQuestion()) + " question answered");
+
+        final int nbrQ = sd.getNumberAnswerQuestion();
+
+        if (nbrQ< 2) {
+            stat2.setText(Integer.toString(nbrQ) + " question answered");
         }
         else {
-            stat2.setText(Integer.toString(QuestionActivity.getNbrQuestion()) + " questions answered");
+            stat2.setText(Integer.toString(nbrQ) + " questions answered");
         }
 
-        final double goodStat = QuestionActivity.getGood() / (QuestionActivity.getGood() + QuestionActivity.getBad()) * 100;
+
+        final int goodRep = sd.getNumberGoodAnswerQuestion();
+        final double goodStat = goodRep / nbrQ * 100;
+
         if (goodStat>-1) {
             stat.setVisibility(View.VISIBLE);
             String strg = Double.toString(goodStat) + " % of good answer" ;

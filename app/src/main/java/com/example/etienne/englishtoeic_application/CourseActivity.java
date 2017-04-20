@@ -3,6 +3,8 @@ package com.example.etienne.englishtoeic_application;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import DataBase.RuleData;
@@ -18,7 +20,30 @@ public class CourseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course);
-    }
+
+        final Button menuBut = (Button) findViewById(R.id.butMenu);
+
+    //BOUTON QUIT
+        menuBut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentM = new Intent(CourseActivity.this, MenuActivity.class);
+                startActivity(intentM);
+            }
+        });
+
+
+        final Button lessonButton = (Button) findViewById(R.id.buttonBack);
+
+    //BOUTON RETOUR LECON
+        lessonButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentL = new Intent(CourseActivity.this, CoursesActivity.class);
+                startActivity(intentL);
+            }
+        });
+}
 
     @Override
     public void onStart(){
