@@ -22,6 +22,7 @@ public class VocabularyExamENtoFRActivity extends AppCompatActivity {
 
     VocabularyData vd = new VocabularyData(this);
     StatData sd = new StatData(this);
+    int idTheme = 0;
 
     public static int laOuJeSuis = 0;
 
@@ -29,9 +30,7 @@ public class VocabularyExamENtoFRActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exam_vocabulary_en_fr);
-
-        //sd.createStat("vocabulary_number_answer");
-        //sd.createStat("vocabulary_number_good_answer");
+        this.idTheme = getIntent().getIntExtra("idTheme",1);
 
         //TOUS OBJETS A DEFINIR
         final Button boutonFrToEn = (Button) findViewById(R.id.butFrEn2);
@@ -56,8 +55,10 @@ public class VocabularyExamENtoFRActivity extends AppCompatActivity {
 
         //TOUT RECUP QUESTION VOCABULAIRE
         vd.open();
-        final ArrayList<Vocabulary> listeVoca = vd.getVocabularyByIdTheme(1);
+        Intent intent = getIntent();
+        final ArrayList<Vocabulary> listeVoca = vd.getVocabularyByIdTheme(getIdTheme());
         vd.close();
+        sd.open();
 
 
         // ???
@@ -79,6 +80,7 @@ public class VocabularyExamENtoFRActivity extends AppCompatActivity {
                 VocabularyExamFRtoENActivity test = new VocabularyExamFRtoENActivity();
                 test.setLaOuJeSuis2(laOuJeSuis);
                 Intent intent = new Intent(VocabularyExamENtoFRActivity.this, VocabularyExamFRtoENActivity.class);
+                intent.putExtra("idTheme",getIdTheme());
                 startActivity(intent);
 
             }
@@ -98,12 +100,12 @@ public class VocabularyExamENtoFRActivity extends AppCompatActivity {
 
                 if (reponseSaisie.contentEquals(motFrancais)) {
                     result.setText("Good answer !");
-                    //sd.goodAnswerVocabulary();
+                    sd.goodAnswerVocabulary();
                     sd.close();
                 }
                 else {
                     result.setText("Sorry, the right answer was " + motFrancais);
-                    //sd.wrongAnswerVocabulary();
+                    sd.wrongAnswerVocabulary();
                     sd.close();
                 }
 
@@ -136,6 +138,7 @@ public class VocabularyExamENtoFRActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(VocabularyExamENtoFRActivity.this, VocabularyExamENtoFRActivity.class);
+                intent.putExtra("idTheme",getIdTheme());
                 startActivity(intent);
 
             }
@@ -174,4 +177,5 @@ public class VocabularyExamENtoFRActivity extends AppCompatActivity {
     public static int getLaOuJeSuis() {
         return laOuJeSuis;
     }
+    public int getIdTheme(){return this.idTheme;}
 }

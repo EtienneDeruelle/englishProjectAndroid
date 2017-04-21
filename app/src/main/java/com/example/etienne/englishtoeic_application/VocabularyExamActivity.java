@@ -23,11 +23,14 @@ import buisiness.Vocabulary;
 public class VocabularyExamActivity extends AppCompatActivity {
 
     VocabularyData vd = new VocabularyData(this);
+    int idTheme = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exam_vocabulary);
+        this.idTheme = getIntent().getIntExtra("idTheme",0);
+        System.out.println("id du theme en question : "+idTheme);
 
     //TOUS OBJETS A DEFINIR
         final Button boutonFrToEn = (Button) findViewById(R.id.butFrEn);
@@ -41,6 +44,8 @@ public class VocabularyExamActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(VocabularyExamActivity.this, VocabularyExamFRtoENActivity.class);
+                System.out.println("azrazeraezrezrazeraezraze : "+idTheme);
+                intent.putExtra("idTheme",idTheme);
                 startActivity(intent);
             }
         });
@@ -50,6 +55,7 @@ public class VocabularyExamActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(VocabularyExamActivity.this, VocabularyExamENtoFRActivity.class);
+                intent.putExtra("idTheme",idTheme);
                 startActivity(intent);
             }
         });

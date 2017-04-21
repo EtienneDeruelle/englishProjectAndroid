@@ -22,6 +22,7 @@ public class VocabularyExamFRtoENActivity extends AppCompatActivity {
 
     VocabularyData vd = new VocabularyData(this);
     StatData sd = new StatData(this);
+    int idTheme = 0;
 
     private static int laOuJeSuis2 = 0;
 
@@ -29,9 +30,7 @@ public class VocabularyExamFRtoENActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exam_vocabulary_fr_en);
-
-        //sd.createStat("vocabulary_number_answer");
-        //sd.createStat("vocabulary_number_good_answer");
+        this.idTheme = getIntent().getIntExtra("idTheme",1);
 
     //TOUS OBJETS A DEFINIR
         final Button boutonFrToEn = (Button) findViewById(R.id.butFrEn1);
@@ -56,7 +55,7 @@ public class VocabularyExamFRtoENActivity extends AppCompatActivity {
 
     //TOUT RECUP QUESTION VOCABULAIRE
         vd.open();
-        final ArrayList<Vocabulary> listeVoca = vd.getVocabularyByIdTheme(1);
+        final ArrayList<Vocabulary> listeVoca = vd.getVocabularyByIdTheme(this.idTheme);
         vd.close();
 
         sd.open();
@@ -84,6 +83,7 @@ public class VocabularyExamFRtoENActivity extends AppCompatActivity {
                 VocabularyExamENtoFRActivity test = new VocabularyExamENtoFRActivity();
                 test.setLaOuJeSuis(laOuJeSuis2);
                 Intent intent = new Intent(VocabularyExamFRtoENActivity.this, VocabularyExamENtoFRActivity.class);
+                intent.putExtra("idTheme",getIdTheme());
                 startActivity(intent);
 
             }
@@ -139,6 +139,7 @@ public class VocabularyExamFRtoENActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(VocabularyExamFRtoENActivity.this, VocabularyExamFRtoENActivity.class);
+                intent.putExtra("idTheme",getIdTheme());
                 startActivity(intent);
 
             }
@@ -177,4 +178,6 @@ public class VocabularyExamFRtoENActivity extends AppCompatActivity {
     public static int getLaOuJeSuis2() {
         return laOuJeSuis2;
     }
+
+    public int getIdTheme(){return this.idTheme;}
 }
