@@ -7,6 +7,7 @@
         android:layout_width="150dp"
         android:layout_height="match_parent"
         android:gravity="center"
+        android:textSize="18dp"
         android:id="@+id/textTheme"
         android:layout_toLeftOf="@+id/ButtonVoca"
         android:layout_toStartOf="@+id/ButtonVoca" />
@@ -21,13 +22,13 @@
         android:layout_alignParentEnd="true" />
 
     <Button
+        android:id="@+id/ButtonVoca"
         android:layout_width="100dp"
         android:layout_height="match_parent"
-        android:text="VOCA"
-        android:id="@+id/ButtonVoca"
         android:layout_alignParentTop="true"
         android:layout_toLeftOf="@+id/ButtonExam"
-        android:layout_toStartOf="@+id/ButtonExam" />
+        android:layout_toStartOf="@+id/ButtonExam"
+        android:text="READ" />
 
 
 </RelativeLayout>

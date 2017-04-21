@@ -28,7 +28,6 @@ public class StatisticActivity extends AppCompatActivity {
 
         final TextView textStat = (TextView) findViewById(R.id.statIntro);
         final TextView stat = (TextView) findViewById(R.id.stat);
-        final TextView test = (TextView) findViewById(R.id.textView);
         final Button ButtonMenu = (Button) findViewById(R.id.buttonMenu);
         final TextView stat2 = (TextView) findViewById(R.id.stat2);
         final Button reset = (Button) findViewById(R.id.buttonReset);
@@ -36,6 +35,7 @@ public class StatisticActivity extends AppCompatActivity {
         final TextView stat2voc = (TextView) findViewById(R.id.stat2Voc);
 
         stat.setVisibility(View.INVISIBLE);
+        statVoc.setVisibility(View.INVISIBLE);
         textStat.setText("Here you can see your statistics : \n \n Statistics for the TOEIC : ");
 
      //NOMBRE DE QUESTIONS REPONDUES
@@ -48,31 +48,26 @@ public class StatisticActivity extends AppCompatActivity {
         double nbr;
         if(nbrQ == 0){
             nbr=0;
-            test.setText("You have to answer some questions to have more statistics !");
         }
         else{
             nbr = goodRep / nbrQ * 100;
             stat.setVisibility(View.VISIBLE);
             String strg = Double.toString(Math.round(goodRep/nbrQ*100)) + " % of good answer" ;
             stat.setText(strg);
-            test.setVisibility(View.INVISIBLE);
         }
 
 
-        /*
-        double nbrV;
+        double nbr2;
         if(nbrV == 0){
-            nbr=0;
-            test.setText("You have to answer some questions to have more statistics !");
+            nbr2=0;
         }
         else{
-            nbr = goodVoc / nbrV * 100;
-            stat.setVisibility(View.VISIBLE);
+            nbr2 = goodVoc / nbrV * 100;
+            statVoc.setVisibility(View.VISIBLE);
             String strg = Double.toString(Math.round(goodVoc/nbrV*100)) + " % of good answer" ;
-            stat.setText(strg);
-            test.setVisibility(View.INVISIBLE);
+            statVoc.setText(strg);
         }
-         */
+
 
 
         //AFFICHAGE SANS FAUTE D'ORTHOGRAPHE
@@ -107,6 +102,8 @@ public class StatisticActivity extends AppCompatActivity {
                 sd.open();
                 sd.upDateStat("question_number_answer", 0);
                 sd.upDateStat("question_number_good_answer", 0);
+                sd.upDateStat("vocabulary_number_answer", 0);
+                sd.upDateStat("vocabulary_number_good_answer", 0);
                 sd.close();
                 Intent intentR = new Intent(StatisticActivity.this, StatisticActivity.class);
                 startActivity(intentR);

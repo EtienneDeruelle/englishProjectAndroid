@@ -38,12 +38,16 @@ public class QuestionActivity extends AppCompatActivity {
         TextView reponseD = (TextView) findViewById(R.id.textView8);
 
         qd.open();
-        qd.addAllQuestions();
+        //qd.addAllQuestions();
 
         sd.open();
         rd.open();
 
+        //sd.createStat("question_number_answer");
+        //sd.createStat("question_number_good_answer");
+
         this.question = qd.getRandomQuestion();
+        qd.close();
 
         // récupération d'une question
         question.setText(this.question.getQuestion());
@@ -73,6 +77,7 @@ public class QuestionActivity extends AppCompatActivity {
         // leçon de la question pas encore visible
         lesson.setText(rd.getRuleById(this.question.getRule()).getRule());
         lesson.setVisibility(View.INVISIBLE);
+        rd.close();
 
     //BOUTON QUIT
         QuitButton.setOnClickListener(new View.OnClickListener() {

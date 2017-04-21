@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:weightSum="1"
+    android:id="@+id/activity_exam_vocabulary"
+    tools:context="com.example.etienne.englishtoeic_application.VocabularyExamActivity"
+    android:layout_gravity="center">
+
+    <Button
+        android:id="@+id/butFrEn"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="French to English" />
+
+    <Button
+        android:id="@+id/butEnFr"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="English to French" />
+
+    <Button
+        android:id="@+id/butTheme"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="back to themes" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="Back to menu" />
 
 </LinearLayout>
