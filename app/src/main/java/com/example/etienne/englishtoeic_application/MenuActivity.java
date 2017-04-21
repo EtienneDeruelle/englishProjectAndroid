@@ -20,6 +20,7 @@ public class MenuActivity extends AppCompatActivity {
         final Button ToeicButton = (Button) findViewById(R.id.button);
         final Button CourseButton = (Button) findViewById(R.id.button2);
         final Button StatButton = (Button) findViewById(R.id.button3);
+        final Button VocButton = (Button) findViewById(R.id.buttonVoc);
 
 
         ToeicButton.setOnClickListener(new View.OnClickListener() {
@@ -46,6 +47,14 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intentStat = new Intent(MenuActivity.this, StatisticActivity.class);
                 startActivity(intentStat);
+            }
+        });
+
+        VocButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intentVoc = new Intent(MenuActivity.this, VocabulariesActivity.class);
+                startActivity(intentVoc);
             }
         });
 

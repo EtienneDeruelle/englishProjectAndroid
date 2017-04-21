@@ -7,27 +7,27 @@
         android:layout_width="150dp"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:id="@+id/textTheme"/>
+        android:id="@+id/textTheme"
+        android:layout_toLeftOf="@+id/ButtonVoca"
+        android:layout_toStartOf="@+id/ButtonVoca" />
 
     <Button
         android:layout_width="100dp"
         android:layout_height="match_parent"
         android:text="EXAM"
+        android:id="@+id/ButtonExam"
+        android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_toRightOf="@+id/textViewTagName"
-        android:layout_toEndOf="@+id/textViewTagName"
-        android:id="@+id/ButtonExam"/>
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:layout_width="100dp"
         android:layout_height="match_parent"
         android:text="VOCA"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_toRightOf="@+id/ButtonExam"
-        android:layout_toEndOf="@+id/ButtonExam"
-        android:id="@+id/ButtonVoca"/>
+        android:id="@+id/ButtonVoca"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/ButtonExam"
+        android:layout_toStartOf="@+id/ButtonExam" />
 
 
 </RelativeLayout>

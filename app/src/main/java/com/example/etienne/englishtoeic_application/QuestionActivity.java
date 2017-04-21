@@ -6,8 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
+
 import DataBase.QuestionData;
 
+import DataBase.RuleData;
 import DataBase.StatData;
 import buisiness.Question;
 
@@ -15,6 +19,8 @@ public class QuestionActivity extends AppCompatActivity {
 
     QuestionData qd = new QuestionData(this);
     StatData sd = new StatData(this);
+    RuleData rd = new RuleData(this);
+    Question question = null;
 
     String goodAnswer;
 
@@ -25,13 +31,31 @@ public class QuestionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
 
+        TextView question = (TextView) findViewById(R.id.textView4);
+        TextView reponseA = (TextView) findViewById(R.id.textView5);
+        TextView reponseB = (TextView) findViewById(R.id.textView6);
+        TextView reponseC = (TextView) findViewById(R.id.textView7);
+        TextView reponseD = (TextView) findViewById(R.id.textView8);
+
         qd.open();
         qd.addAllQuestions();
 
         sd.open();
-        sd.createStat("question_number_answer");
-        sd.createStat("question_number_good_answer");
+        rd.open();
 
+        this.question = qd.getRandomQuestion();
+
+        // récupération d'une question
+        question.setText(this.question.getQuestion());
+
+        // récupération des réponses
+        reponseA.setText(this.question.getAnswerA());
+        reponseB.setText(this.question.getAnswerB());
+        reponseC.setText(this.question.getAnswerC());
+        reponseD.setText(this.question.getAnswerD());
+
+        //récupération bonne réponse
+        goodAnswer = this.question.getCorrectAnswer();
 
         final TextView result = (TextView) findViewById(R.id.textView9);
         final TextView next = (TextView) findViewById(R.id.buttonNext);
@@ -41,9 +65,14 @@ public class QuestionActivity extends AppCompatActivity {
         final Button BoutonC = (Button) findViewById(R.id.buttonC);
         final Button BoutonD = (Button) findViewById(R.id.buttonD);
         final Button BoutonNext = (Button) findViewById(R.id.buttonNext);
+        final TextView lesson = (TextView) findViewById(R.id.textView10);
 
         BoutonNext.setVisibility(View.INVISIBLE);
         result.setVisibility(View.INVISIBLE);
+
+        // leçon de la question pas encore visible
+        lesson.setText(rd.getRuleById(this.question.getRule()).getRule());
+        lesson.setVisibility(View.INVISIBLE);
 
     //BOUTON QUIT
         QuitButton.setOnClickListener(new View.OnClickListener() {
@@ -68,6 +97,7 @@ public class QuestionActivity extends AppCompatActivity {
                 }
                 else {
                     result.setText("Sorry, the right answer was " + goodAnswer);
+                    lesson.setVisibility(View.VISIBLE);
                     sd.wrongAnswerQuestion();
                     sd.close();
                 }
@@ -99,6 +129,7 @@ public class QuestionActivity extends AppCompatActivity {
                 }
                 else {
                     result.setText("Sorry, the right answer was " + goodAnswer);
+                    lesson.setVisibility(View.VISIBLE);
                     sd.wrongAnswerQuestion();
                     sd.close();
                 }
@@ -130,6 +161,7 @@ public class QuestionActivity extends AppCompatActivity {
                 }
                 else {
                     result.setText("Sorry, the right answer was " + goodAnswer);
+                    lesson.setVisibility(View.VISIBLE);
                     sd.wrongAnswerQuestion();
                     sd.close();
                 }
@@ -161,6 +193,7 @@ public class QuestionActivity extends AppCompatActivity {
                 }
                 else {
                     result.setText("Sorry, the right answer was " + goodAnswer);
+                    lesson.setVisibility(View.VISIBLE);
                     sd.wrongAnswerQuestion();
                     sd.close();
                 }
@@ -188,34 +221,6 @@ public class QuestionActivity extends AppCompatActivity {
                 startActivity(intentToeic);
             }
         });
-
-
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        TextView question = (TextView) findViewById(R.id.textView4);
-        TextView reponseA = (TextView) findViewById(R.id.textView5);
-        TextView reponseB = (TextView) findViewById(R.id.textView6);
-        TextView reponseC = (TextView) findViewById(R.id.textView7);
-        TextView reponseD = (TextView) findViewById(R.id.textView8);
-
-        Question quest = qd.getRandomQuestion();
-        qd.close();
-
-        // récupération d'une question
-        question.setText(quest.getQuestion());
-
-        // récupération des réponses
-        reponseA.setText(quest.getAnswerA());
-        reponseB.setText(quest.getAnswerB());
-        reponseC.setText(quest.getAnswerC());
-        reponseD.setText(quest.getAnswerD());
-
-        //récupération bonne réponse
-        goodAnswer = quest.getCorrectAnswer();
-
 
     }
 
