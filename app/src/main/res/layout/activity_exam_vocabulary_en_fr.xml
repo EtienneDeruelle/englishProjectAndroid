@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:weightSum="1"
+    android:id="@+id/activity_exam_vocabulary_en_fr"
+    tools:context="com.example.etienne.englishtoeic_application.VocabularyExamENtoFRActivity">>
+
+    <Button
+        android:id="@+id/butFrEn2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="French to English" />
+
+    <Button
+        android:id="@+id/butEnFr2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="English to French" />
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_weight="0.09"
+        android:gravity="bottom"
+        android:text="Please, write in lowercase :" />
+
+    <TextView
+        android:id="@+id/mot2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="Word to translate"
+        android:textAlignment="center"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="text"
+        android:textAlignment="center"
+        tools:text="Means ..." />
+
+    <TextView
+        android:id="@+id/textView142"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView122"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/buttonOK2"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:text="ok" />
+
+    <Button
+        android:id="@+id/butNext2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Next Question" />
+
+    <Button
+        android:id="@+id/butTheme2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="back to themes" />
+
+    <Button
+        android:id="@+id/button82"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Back to menu" />
+
+</LinearLayout>

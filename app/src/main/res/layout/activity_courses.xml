@@ -16,6 +16,6 @@
         android:id="@+id/buttonGoogBye"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:text="Back to the menu" />
+        android:text="Back to menu" />
 
 </LinearLayout>
