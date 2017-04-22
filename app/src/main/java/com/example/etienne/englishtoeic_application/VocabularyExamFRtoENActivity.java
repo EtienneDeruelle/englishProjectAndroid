@@ -106,7 +106,7 @@ public class VocabularyExamFRtoENActivity extends AppCompatActivity {
                     sd.close();
                 }
                 else {
-                    result.setText("Sorry, the right answer was " + motAnglais);
+                    result.setText("Sorry, the right answer was :\n" + motAnglais);
                     sd.wrongAnswerVocabulary();
                     sd.close();
                 }
