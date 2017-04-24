@@ -26,6 +26,7 @@ public class VocabulariesActivity extends AppCompatActivity {
 
     ListView mListView =null;
 
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

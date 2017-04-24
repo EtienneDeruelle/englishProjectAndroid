@@ -6,11 +6,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import DataBase.VocabularyData;
+
 /**
  * Created by etienne on 28/01/17.
  */
 
 public class MenuActivity extends AppCompatActivity {
+
+
+    VocabularyData vd = new VocabularyData(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +63,10 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
-
+        vd.open();
+        vd.createAllTheme();
+        vd.createAllVoca();
+        vd.close();
 
 
     }

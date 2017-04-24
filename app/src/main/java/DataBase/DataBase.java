@@ -29,21 +29,21 @@ public class DataBase extends SQLiteOpenHelper{
 
         db.execSQL("CREATE TABLE VOCABULARY (english_word VARCHAR(50) PRIMARY KEY, french_word VARCHAR(50), id_theme INTEGER, FOREIGN KEY (id_theme) REFERENCES THEME(id_theme))");
 
-        db.execSQL("INSERT INTO THEME(id_theme, label_theme) VALUES (1,'weather')");
-        db.execSQL("INSERT INTO THEME(id_theme, label_theme) VALUES (2,'travel')");
-        db.execSQL("INSERT INTO THEME(id_theme, label_theme) VALUES (3,'company')");
-        db.execSQL("INSERT INTO THEME(id_theme, label_theme) VALUES (4,'history')");
+        //db.execSQL("INSERT INTO THEME(id_theme, label_theme) VALUES (1,'weather')");
+        //db.execSQL("INSERT INTO THEME(id_theme, label_theme) VALUES (2,'travel')");
+        //db.execSQL("INSERT INTO THEME(id_theme, label_theme) VALUES (3,'company')");
+        //db.execSQL("INSERT INTO THEME(id_theme, label_theme) VALUES (4,'history')");
 
-        db.execSQL("INSERT INTO VOCABULARY(english_word,french_word,id_theme) VALUES ('weather forcast','prévision météo',1)");
-        db.execSQL("INSERT INTO VOCABULARY(english_word,french_word,id_theme) VALUES ('sunny spell','éclaircie',1)");
-        db.execSQL("INSERT INTO VOCABULARY(english_word,french_word,id_theme) VALUES ('tidal waves','raz-de-marré',1)");
-        db.execSQL("INSERT INTO VOCABULARY(english_word,french_word,id_theme) VALUES ('warm','chaleur',1)");
+        //db.execSQL("INSERT INTO VOCABULARY(english_word,french_word,id_theme) VALUES ('weather forcast','prévision météo',1)");
+        //db.execSQL("INSERT INTO VOCABULARY(english_word,french_word,id_theme) VALUES ('sunny spell','éclaircie',1)");
+        //db.execSQL("INSERT INTO VOCABULARY(english_word,french_word,id_theme) VALUES ('tidal waves','raz-de-marré',1)");
+        //db.execSQL("INSERT INTO VOCABULARY(english_word,french_word,id_theme) VALUES ('warm','chaleur',1)");
 
 
-        db.execSQL("INSERT INTO STAT(label_stat) VALUES ('question_number_answer')");
-        db.execSQL("INSERT INTO STAT(label_stat) VALUES ('question_number_good_answer')");
-        db.execSQL("INSERT INTO STAT(label_stat) VALUES ('vocabulary_number_answer')");
-        db.execSQL("INSERT INTO STAT(label_stat) VALUES ('vocabulary_number_good_answer')");
+        //db.execSQL("INSERT INTO STAT(label_stat) VALUES ('question_number_answer')");
+        //db.execSQL("INSERT INTO STAT(label_stat) VALUES ('question_number_good_answer')");
+        //db.execSQL("INSERT INTO STAT(label_stat) VALUES ('vocabulary_number_answer')");
+        //db.execSQL("INSERT INTO STAT(label_stat) VALUES ('vocabulary_number_good_answer')");
 
         db.execSQL("INSERT INTO RULE VALUES (1,'haricot 2tante','la tante doit manger le haricot', 'the aunt must eat the bean')");
         db.execSQL("INSERT INTO RULE VALUES (2,'kung fu','The kung fu is a martial sport. It can be dangerous to pratice this sport.', 'Le kung fu est un sport de combat. Il peut etre dangeureux de pratiquer ce sport.')");

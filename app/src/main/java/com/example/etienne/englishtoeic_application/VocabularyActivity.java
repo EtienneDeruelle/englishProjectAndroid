@@ -35,7 +35,6 @@ public class VocabularyActivity extends AppCompatActivity {
         VocabularyAdapter adapter = new VocabularyAdapter(VocabularyActivity.this,0, vocabularies);
         mListView.setAdapter(adapter);
 
-
         final Button goodBye = (Button) findViewById(R.id.buttonGoogBye);
         //BOUTON QUIT
         goodBye.setOnClickListener(new View.OnClickListener() {
