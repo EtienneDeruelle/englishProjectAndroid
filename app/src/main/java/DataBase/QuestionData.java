@@ -80,6 +80,7 @@ public class QuestionData {
         return questions.get(indexAleatoire);
     }
 
+    /*
     public void addAllQuestions() {
 
         final Question q = new Question(1, "Diane ------ a meeting of the partners to discuss the merger situation.", "installed", "called", "asked", "claimed", "B", 1);
@@ -99,8 +100,7 @@ public class QuestionData {
 
         final Question q6 = new Question(6, "------ in doubt, get started early on the workload.", "If", "As", "When", "Where", "C", 1);
         this.createQuestion(q6);
-
-    }
+    }*/
 
 
 

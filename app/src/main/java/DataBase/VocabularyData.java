@@ -242,11 +242,6 @@ public class VocabularyData {
 //40 MOTS SUR Shortcomings
 
 
-
-
-
-
-
     }
 
 }

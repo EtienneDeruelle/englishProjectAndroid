@@ -38,13 +38,8 @@ public class QuestionActivity extends AppCompatActivity {
         TextView reponseD = (TextView) findViewById(R.id.textView8);
 
         qd.open();
-        qd.addAllQuestions();
-
         sd.open();
         rd.open();
-
-        sd.createStat("question_number_answer");
-        sd.createStat("question_number_good_answer");
 
         this.question = qd.getRandomQuestion();
         qd.close();
@@ -227,6 +222,10 @@ public class QuestionActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public Question getQuestion(){
+        return this.question;
     }
 
 }

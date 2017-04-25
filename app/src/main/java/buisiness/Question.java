@@ -15,7 +15,7 @@ public class Question {
     private String correctAnswer;
     private int rule;
 
-    public Question(int idQuestion, String question, String answerA, String answerC, String answerB, String answerD, String correctAnswer, int rule) {
+    public Question(int idQuestion, String question, String answerA, String answerB, String answerC, String answerD, String correctAnswer, int rule) {
         this.idQuestion = idQuestion;
         this.question = question;
         this.answerA = answerA;

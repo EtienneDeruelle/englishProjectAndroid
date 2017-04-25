@@ -15,8 +15,6 @@ import DataBase.VocabularyData;
 public class MenuActivity extends AppCompatActivity {
 
 
-    VocabularyData vd = new VocabularyData(this);
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,10 +61,7 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
-        vd.open();
-        vd.createAllTheme();
-        vd.createAllVoca();
-        vd.close();
+
 
 
     }

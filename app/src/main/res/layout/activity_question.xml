@@ -128,10 +128,10 @@
         <TextView
             android:id="@+id/textView10"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
             android:gravity="center"
             android:text="TextView"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:layout_height="130dp" />
 
     </LinearLayout>
 
