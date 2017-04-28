@@ -19,7 +19,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:text="BasicEnglish"
+        android:text="EnglishBasic"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textSize="30dp"
