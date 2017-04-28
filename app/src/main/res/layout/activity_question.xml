@@ -18,7 +18,7 @@
         android:layout_column="0"
         android:layout_row="0"
         android:text="Question ?"
-        android:textSize="20sp" />
+        android:textSize="15sp" />
 
     <RelativeLayout
         android:layout_row="1"
@@ -130,8 +130,8 @@
             android:layout_width="match_parent"
             android:gravity="center"
             android:text="TextView"
-            android:textSize="20sp"
-            android:layout_height="130dp" />
+            android:textSize="15sp"
+            android:layout_height="94dp" />
 
     </LinearLayout>
 
@@ -144,7 +144,7 @@
         <Button
             android:id="@+id/buttonNext"
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="47dp"
             android:clickable="false"
             android:text="..." />
 
@@ -152,7 +152,7 @@
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="43dp"
         android:layout_column="0"
         android:layout_row="8"
         android:orientation="horizontal"
@@ -161,7 +161,7 @@
         <Button
             android:id="@+id/buttonQuit"
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="match_parent"
             android:elevation="0dp"
             android:text="Back to menu"
             android:textAlignment="center" />
