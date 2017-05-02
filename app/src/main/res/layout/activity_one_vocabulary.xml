@@ -8,6 +8,7 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:textSize="18dp"
+        android:textAlignment="center"
         android:id="@+id/textTheme"
         android:layout_toLeftOf="@+id/ButtonVoca"
         android:layout_toStartOf="@+id/ButtonVoca" />

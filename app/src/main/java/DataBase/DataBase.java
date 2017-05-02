@@ -41,15 +41,15 @@ public class DataBase extends SQLiteOpenHelper{
 
 
         db.execSQL("INSERT INTO QUESTION VALUES (1,'She ------ at the conservatory every monday.','dance','dances','is dancing','have danced','B',1)");
-        db.execSQL("INSERT INTO QUESTION VALUES (2,'You are eating a burger. Where usually ------ you your junk food ?','bought','are buying','buy','buys','D',1)");
-        db.execSQL("INSERT INTO QUESTION VALUES (3,'Every Friday, I eat fish. We are Friday at noon, so I ------ a fish.','eat','am eating','have eaten','am eat','B',2)");
+        db.execSQL("INSERT INTO QUESTION VALUES (2,'You are eating a burger. Where do you usually ------ your junk food ?','bought','are buying','buy','buys','D',1)");
+        db.execSQL("INSERT INTO QUESTION VALUES (3,'Every Friday, I eat fish. It is Friday, so I ------ a fish, right now.','eat','am eating','have eaten','am eat','B',2)");
         db.execSQL("INSERT INTO QUESTION VALUES (4,'Mike and Paul ------ football now.',' are playing','play','have played','plays','A',2)");
         db.execSQL("INSERT INTO QUESTION VALUES (5,'I''m not hungry. I ------ a burger.','have just eat','just eaten','have just eaten','am eating','C',3)");
-        db.execSQL("INSERT INTO QUESTION VALUES (6,'The rock band is tired. They ------ all the night.','have played','played','has played','are playing','A',3)");
+        db.execSQL("INSERT INTO QUESTION VALUES (6,'The rock band is tired. They ------ all night.','have played','played','has played','are playing','A',3)");
         db.execSQL("INSERT INTO QUESTION VALUES (7,'Yesterday, Alexander ------ to the museum.','went','goes','is going','gone','A',4)");
         db.execSQL("INSERT INTO QUESTION VALUES (8,'When I was in Ireland, I ------ to church each Saturday.','didn''t went','don''t go','don''t went','didn''t go','D',4)");
         db.execSQL("INSERT INTO QUESTION VALUES (9,'When you called me, I ------ with Paul.','danced','am dancing','was dancing','will dance','C',5)");
-        db.execSQL("INSERT INTO QUESTION VALUES (10,'We ------ a chicken pepperoni during your yoga class of yesterday.','was cooking','were cooking','will cook','are cooking','B',5)");
+        db.execSQL("INSERT INTO QUESTION VALUES (10,'We ------ a chicken pepperoni during our cooking class of yesterday.','was cooking','were cooking','will cook','are cooking','B',5)");
 
 
 
@@ -65,7 +65,7 @@ public class DataBase extends SQLiteOpenHelper{
         db.execSQL("INSERT INTO VOCABULARY(id_theme,english_word,french_word) VALUES (1, 'a typhoon', 'un typhon')");
         db.execSQL("INSERT INTO VOCABULARY(id_theme,english_word,french_word) VALUES (1, 'to shine', 'briller')");
         db.execSQL("INSERT INTO VOCABULARY(id_theme,english_word,french_word) VALUES (1, 'fair weather', 'beau temps')");
-        db.execSQL("INSERT INTO VOCABULARY(id_theme,english_word,french_word) VALUES (1, 'a cyclone', 'a cyclone')");
+        db.execSQL("INSERT INTO VOCABULARY(id_theme,english_word,french_word) VALUES (1, 'a cyclone', 'un cyclone')");
         db.execSQL("INSERT INTO VOCABULARY(id_theme,english_word,french_word) VALUES (1, 'a hit wave', 'une vague de chaleur')");
         db.execSQL("INSERT INTO VOCABULARY(id_theme,english_word,french_word) VALUES (1, 'a gust of wind', 'un coup de vent')");
         db.execSQL("INSERT INTO VOCABULARY(id_theme,english_word,french_word) VALUES (1, 'a hurricane', 'un ouragan')");
